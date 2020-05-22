@@ -66,3 +66,25 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## about ci/cd
+
+using tarvis-ci (for testing) and deploy aws
+
+go to travis-ci >> activate the repo that you want to do ci/cd
+
+when we push something to git, travis will pull it down and do something following .travis.yml file
+
+### travis.yml
+
+contain: command to tell travis what we want to do
+
+step:
+1. tell travis we need a copy of docker running
+>> services: 
+2. build our image using Dockerfile.dev
+>> before_install:
+3. tell travis how to run our test suite
+>> script:
+>>>> each command need to exist after running
+4. tell travis how to deploy our code to some server(aws)
