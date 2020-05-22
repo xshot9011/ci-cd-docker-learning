@@ -8,3 +8,13 @@ before_install:
 
 script:
     - docker run bigdev2000/docker-learning npm run test -- --coverage
+    
+deploy:
+    provider: elasticbeanstalk
+    region: "us-west-2"
+    app: docker-learning
+    env: [env_name]
+    bucket_name: "[name]"
+    bucket_path: "docker-learning"
+    on:
+        branch: master

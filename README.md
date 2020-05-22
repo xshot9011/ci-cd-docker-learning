@@ -88,3 +88,12 @@ step:
 >> script:
 >>>> each command need to exist after running
 4. tell travis how to deploy our code to some server(aws)
+>> deploy
+>>>> provider: deploy to handfull deployer (host provider)
+>>>> region: place where you run
+>>>> app: specific the name
+>>>> env: env of aws application when we create it
+>>>> bucket_name: our zip file(file in github, travis auto zip it and put it in this bucket()) 
+        looking for example in s3 service of aws
+>>>> bucket_path: appname >> as root folder's name
+>>>> on: when the branch "name" was pushed code by me, that the time to deploy
