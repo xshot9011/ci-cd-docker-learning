@@ -117,3 +117,7 @@ note: dont show it on build log
 
 >>>> access_key_id: $env_vaar ex. $AWS_ACCESS_KEY
 >>>> secret_access_key: secure: "$env var" ex "$AWS_SECRET_KEY"
+
+now something that I forget is port mapping because traffic outside the container cannot go through container 
+
+so config it in dockerfile again

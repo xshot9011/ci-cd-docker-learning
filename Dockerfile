@@ -8,6 +8,8 @@ COPY . .
 RUN npm run build
 # run stage
 FROM nginx
+EXPOSE 80
+# port that get map for incoming traffic
 COPY --from=build_stage /app/build /usr/share/nginx/html
 # copy something from another phase
 
