@@ -97,3 +97,23 @@ step:
         looking for example in s3 service of aws
 >>>> bucket_path: appname >> as root folder's name
 >>>> on: when the branch "name" was pushed code by me, that the time to deploy
+
+find service name "IAM",  service that use to manage api key
+select users > click add user > fill info, select programmatic access > select attach  existing policies directly
+(what user can do) > filter policies with elasticbeanstalk, description is provide full access... choose this one >
+next > create user
+
+note: secret key only show once in it life time ! onyly once
+
+note: in travis.yml we won't put the secret key on it, because of privacy (public repo)
+
+we will use environment secret, provided by travis-ci
+go setting >> enviroment var >> 
+note: dont show it on build log
+{
+        AWS_ACCESS_KEY: [key in aws],
+        AWS_SECRET_KEY: [secrete key in travis ci]
+}
+
+>>>> access_key_id: $env_vaar ex. $AWS_ACCESS_KEY
+>>>> secret_access_key: secure: "$env var" ex "$AWS_SECRET_KEY"
